@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Profiles</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, red, black, yellow, orange);
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .profiles {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .profile {
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            cursor: pointer;
+            animation: bounceIn 1.5s ease-in-out;
+        }
+        .profile:hover {
+            transform: scale(1.1);
+        }
+        img {
+            width: 120px;
+            height: 120px;
+            background: gray;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 10px;
+            transition: transform 0.3s;
+        }
+        p {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .next-btn {
+            padding: 15px 30px;
+            background: #ffcc00;
+            color: black;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-top: 30px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        .next-btn:hover {
+            background: #e6b800;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            animation: zoomIn 0.5s ease;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Team Profiles</h1>
+    <div class="profiles">
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 1"><p>Rabin chettri</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 2"><p>Tshering Norbu</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 3"><p>Ayush prasad</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 4"><p>Ashika Pradhan</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 5"><p>Smita poudyal</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 6"><p>Jyoti Bai Rajput</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 7"><p>Seema Balmiki</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 8"><p>Yeshey Lhamu Moktan</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 9"><p>Suk Maya Rai</p></div>
+        <div class="profile" onclick="openModal(this)"><img src="#" alt="Profile 10"><p>Lalmuniya</p></div>
+    </div>
+    <button class="next-btn" onclick="window.location.href='wbs.html'">Next</button>
+    
+    <div class="modal" id="modal" onclick="closeModal()">
+        <img id="modalImage" src="#" alt="Profile Image">
+    </div>
+    
+    <script>
+        function openModal(element) {
+            const imageSrc = element.querySelector('img').src;
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

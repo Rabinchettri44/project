@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 4</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(45deg, black, yellow, blue, orange, red, lightpink);
+            background-size: 400% 400%;
+            animation: gradientBG 10s infinite alternate;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .title {
+            font-size: 20rem;
+            font-weight: bold;
+            text-shadow: 10px 10px 25px rgba(255, 255, 255, 0.9);
+            line-height: 1;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fadeInSlide 2s ease-in-out forwards;
+        }
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">GROUP 4</div>
+    
+    <script>
+        setTimeout(() => {
+            window.location.href = 'profile.html';
+        }, 6000); // Redirect to the next page after 6 seconds
+    </script>
+</body>
+</html>
